@@ -9,7 +9,7 @@ resources:
 - repo: self
 
 variables:
-  ImageName: 'dockerImage:$(Build.BuildId)'
+  ImageName: '$(Build.Repository.Name):$(Build.BuildId)'
   name: SNYK_API
   value: "https://snyk.io/api"
   tag: '$(Build.BuildId)'
@@ -29,7 +29,6 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-        Image: '$(ImageName)'
         tags: |
           $(tag)
     - task: SnykSecurityScan@1
