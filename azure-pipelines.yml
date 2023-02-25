@@ -34,7 +34,7 @@ stages:
       inputs:
         serviceConnectionEndpoint: 'https://api.snyk.io/api/v1/'
         testType: 'container'
-        dockerImageName: '$(imageName)'
+        dockerImageName: 'Dockerimage'
         dockerfilePath: 'Dockerfile'
         monitorWhen: 'always'
         failOnIssues: true
