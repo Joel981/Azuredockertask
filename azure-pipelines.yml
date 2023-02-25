@@ -9,7 +9,10 @@ resources:
 - repo: self
 
 variables:
+  name: SNYK_API
+  value: "https://snyk.io/api"
   tag: '$(Build.BuildId)'
+
 
 stages:
 - stage: Build
@@ -32,6 +35,7 @@ stages:
         serviceConnectionEndpoint: 'https://api.snyk.io/api/v1/'
         testType: 'container'
         dockerImageName: '$(imageName)'
+        dockerfilePath: 'Dockerfile'
         monitorWhen: 'always'
         failOnIssues: true
         projectName: 'DockerTask'
