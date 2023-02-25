@@ -29,7 +29,7 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-        image: '$(ImageName)'
+        Image: '$(ImageName)'
         tags: |
           $(tag)
     - task: SnykSecurityScan@1
