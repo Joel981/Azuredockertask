@@ -30,6 +30,6 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'Docker Hub'
-        repository: 'docker_10'
+        repository: 'joelanto/docker_10'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
