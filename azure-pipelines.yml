@@ -46,3 +46,8 @@ stages:
         repository: 'joelanto / docker_10'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
+    - task: CmdLine@2
+      inputs:
+        script: |
+          docker version
+          docker login
