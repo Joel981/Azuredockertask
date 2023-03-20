@@ -48,6 +48,6 @@ stages:
         Dockerfile: '**/Dockerfile'
     - task: CmdLine@2
       inputs:
-        script:
+        script: |
           docker version
           docker login
